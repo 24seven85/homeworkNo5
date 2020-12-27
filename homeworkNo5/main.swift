@@ -49,9 +49,10 @@ extension Car {
 
 
 
-class TruckCar: Car {
-   
-    
+class TruckCar: Car, CustomStringConvertible {
+    var description: String {
+    return "Грузовик"
+    }
     
     var brand: String
     var transmission: Transmission
@@ -73,7 +74,11 @@ class TruckCar: Car {
     
     
 }
-class SportCar: Car {
+class SportCar: Car, CustomStringConvertible {
+    var description: String {
+        return "Спорткар"
+    }
+    
     
     var brand: String
     var transmission: Transmission
