@@ -28,9 +28,12 @@ protocol Car {
     var windows: Windows { get set }
     var engine: Engine { get set }
     
-    func printCar()
+    func changewheels(wheel: Wheels)
 }
+
+
 extension Car {
+    
     
     mutating func openCloseWindow(window: Windows) {
         self.windows = window
@@ -41,10 +44,56 @@ extension Car {
 
 }
 
-extension Car {
+
+
+class TruckCar: Car {
     
-    mutating func changewheels(wheel: Wheels) {
+    var brand: String
+    var transmission: Transmission
+    var wheels: Wheels
+    var km: Double
+    var windows: Windows
+    var engine: Engine
+    let maxCapacity: Int
+    
+    init(brand: String, transmission: Transmission, wheels: Wheels, km: Double, windows: Windows, engine: Engine, maxCapacity: Int) {
+        self.brand = brand
+        self.transmission = transmission
+        self.wheels = wheels
+        self.km = km
+        self.windows = windows
+        self.engine = engine
+        self.maxCapacity = maxCapacity
+    }
+    
+    func changewheels(wheel: Wheels) {
         self.wheels = wheel
+        print("Наступила зима, пора менять колеса")
     }
 }
-
+class SportCar: Car {
+    
+    var brand: String
+    var transmission: Transmission
+    var wheels: Wheels
+    var km: Double
+    var windows: Windows
+    var engine: Engine
+    let maxSpeed: Int
+    
+    init(brand: String, transmission: Transmission, wheels: Wheels, km: Double, windows: Windows, engine: Engine, maxSpeed: Int) {
+        self.brand = brand
+        self.transmission = transmission
+        self.wheels = wheels
+        self.km = km
+        self.windows = windows
+        self.engine = engine
+        self.maxSpeed = maxSpeed
+    }
+    
+    func changewheels(wheel: Wheels) {
+        self.wheels = wheel
+        print("Наступила зима, пора менять колеса")
+    }
+    
+}
