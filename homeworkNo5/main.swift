@@ -7,5 +7,14 @@
 
 import Foundation
 
-print("Hello, World!")
-
+enum Transmission {
+    case automatic, manual
+}
+protocol Car {
+    var brand: String { get  }
+    var transmission: Transmission { get set }
+    var wheels: Int { get set }
+    var km: Double { get set }
+    
+    func printCar()
+}
