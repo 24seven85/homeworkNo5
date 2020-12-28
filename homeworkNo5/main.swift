@@ -98,7 +98,17 @@ var truck2 = TruckCar(brand: "Volvo", transmission: .automatic, tires: .winter, 
 var sCar1 = SportCar(brand: "Ferrari", transmission: .automatic, tires: .summer, km: 40000, windows: .open, engine: .stop, maxSpeed: 350)
 var sCar2 = SportCar(brand: "Porsche", transmission: .automatic, tires: .winter, km: 120000, windows: .close, engine: .start, maxSpeed: 300)
 
-truck1.changeTires(tire: .winter)
-sCar1.openCloseWindow(window: .close)
-sCar2.startStopEngine(engine: .stop)
 
+
+truck1.changeTires(tire: .winter)
+print(truck1.brand, truck1.transmission, truck1.tires )
+
+truck2.startStopEngine(engine: .start)
+print(truck2.brand, truck2.engine)
+
+sCar1.openCloseWindow(window: .close)
+sCar1.changeTires(tire: .winter)
+print(sCar1.brand, sCar1.windows, sCar1.tires)
+
+sCar2.startStopEngine(engine: .stop)
+print(sCar2.brand, sCar2.engine)
