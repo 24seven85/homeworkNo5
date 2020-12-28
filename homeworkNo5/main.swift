@@ -31,7 +31,6 @@ protocol Car {
     mutating func changeTires(tire: Tires)
 }
 
-
 extension Car {
     
     mutating func changeTires(tire: Tires) {
@@ -44,10 +43,7 @@ extension Car {
     mutating func startStopEngine(engine: Engine) {
         self.engine = engine
     }
-
 }
-
-
 
 class TruckCar: Car, CustomStringConvertible {
     var description: String {
@@ -71,14 +67,12 @@ class TruckCar: Car, CustomStringConvertible {
         self.engine = engine
         self.maxCapacity = maxCapacity
     }
-    
-    
 }
+
 class SportCar: Car, CustomStringConvertible {
     var description: String {
         return "Спорткар"
     }
-    
     
     var brand: String
     var transmission: Transmission
@@ -97,6 +91,14 @@ class SportCar: Car, CustomStringConvertible {
         self.engine = engine
         self.maxSpeed = maxSpeed
     }
-    
-    
 }
+
+var truck1 = TruckCar(brand: "Scania", transmission: .manual, tires: .summer, km: 156000, windows: .close, engine: .stop, maxCapacity: 500000)
+var truck2 = TruckCar(brand: "Volvo", transmission: .automatic, tires: .winter, km: 268000, windows: .close, engine: .start, maxCapacity: 450000)
+var sCar1 = SportCar(brand: "Ferrari", transmission: .automatic, tires: .summer, km: 40000, windows: .open, engine: .stop, maxSpeed: 350)
+var sCar2 = SportCar(brand: "Porsche", transmission: .automatic, tires: .winter, km: 120000, windows: .close, engine: .start, maxSpeed: 300)
+
+truck1.changeTires(tire: .winter)
+sCar1.openCloseWindow(window: .close)
+sCar2.startStopEngine(engine: .stop)
+
